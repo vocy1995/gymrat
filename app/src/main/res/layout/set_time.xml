@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content">
+
+
+
+    <!-- Notice -->
+    <LinearLayout
+        android:padding="24dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:layout_centerInParent="true"
+            android:timePickerMode = "spinner"/>
+
+
+        <RelativeLayout
+            android:padding="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="일"
+                android:id="@+id/sunday"
+                android:textColor="#ff0000"
+                android:gravity="center"
+                android:background="@drawable/date_change"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="월"
+                android:id="@+id/monday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/sunday"
+                android:background="@drawable/date_change"
+                />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="화"
+                android:id="@+id/tuesday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/monday"
+                android:background="@drawable/date_change"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="수"
+                android:id="@+id/wednesday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/tuesday"
+                android:background="@drawable/date_change"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="목"
+                android:id="@+id/thursday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/wednesday"
+                android:background="@drawable/date_change"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="금"
+                android:id="@+id/friday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/thursday"
+                android:background="@drawable/date_change"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="토"
+                android:id="@+id/sturday"
+                android:textColor="#0067a3"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/friday"
+                android:background="@drawable/date_change"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!-- Notice -->
+
+    <View
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <!-- 닫기 버튼 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+        <Button
+            android:text="취소"
+            android:textSize="15sp"
+            android:textColor="#ff7a00"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:background="#00000000"
+            android:onClick="mOnClose"/>
+
+
+        <Button
+            android:text="확인"
+            android:textSize="15sp"
+            android:textColor="#ff7a00"
+            android:background="#00000000"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:onClick="mOnConfirm"/>
+    </LinearLayout>
+    <!--// 닫기 버튼 -->
+</LinearLayout>
