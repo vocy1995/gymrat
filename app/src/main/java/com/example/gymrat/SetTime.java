@@ -1,7 +1,9 @@
 package com.example.gymrat;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -24,12 +26,16 @@ public class SetTime extends Activity {
     int skyblueColor, redColor, blacklColor, blueColor, pinkColor;
     int sunCount, monCount, tueCount, wenCount, thuCount, friCount, satCount;
     int[] colorArr = new int[7];
-
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//        setEditor();
+
         skyblueColor = ContextCompat.getColor(getApplicationContext(), R.color.skyblue);
+        System.out.println("skyblueColor" + skyblueColor);
         redColor = ContextCompat.getColor(getApplicationContext(), R.color.red);
         blacklColor = ContextCompat.getColor(getApplicationContext(), R.color.black);
         blueColor = ContextCompat.getColor(getApplicationContext(), R.color.blue);
@@ -183,7 +189,7 @@ public class SetTime extends Activity {
 
 //        isDateArr = {isSat,isSat,isSat,isSat,isSat,isSat,isSat};
         Intent intent = getIntent();
-        data = intent.getStringExtra("data");
+        data = intent.getStringExtra("position");
         System.out.println("data" + data);
 
         System.out.println("isDateAtrr le " + isDateArr.length);
@@ -241,7 +247,18 @@ public class SetTime extends Activity {
 
         boolean isSwitch = false;
 
-        alarmRecyleView.insertItem(Integer.parseInt(data),hour, minute, colorArr, isDateArr, isSwitch);
+        alarmRecyleView.insertItem(Integer.parseInt(data), hour, minute, colorArr, isDateArr, isSwitch);
+        Context context = v.getContext();
+
+        setEditor(Integer.parseInt(data));
+        String checkColorString = getColorIndex(isDateArr);
+        editor.putString("position", data);
+        editor.putString("hour", hour);
+        editor.putString("minute", minute);
+        editor.putString("color", checkColorString);
+        editor.putBoolean("isChecked", isSwitch);
+        AlarmRecyleView.fileCount += 1;
+        editor.apply();
 //        startActivityForResult(intent, 1);
 
         finish();
@@ -255,10 +272,30 @@ public class SetTime extends Activity {
         return true;
     }
 
+
     @Override
     public void onBackPressed() {
         return;
     }
 
+    public String getColorIndex(boolean[] arr){
+        String temp = "";
+        int count = 0;
+        for(count = 0; count < arr.length; count ++){
+            if (arr[count] == true){
+                temp = temp + count + " " + 1 + " ";
+            }
+            else{
+                temp = temp + count + " " + 0 + " ";
+            }
+
+        }
+        return temp;
+    }
+
+    public void setEditor(int i){
+        this.sharedPreferences = getSharedPreferences("Test" + i, Context.MODE_PRIVATE);
+        this.editor = sharedPreferences.edit();
+    }
 }
 

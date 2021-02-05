@@ -56,7 +56,7 @@
                 android:textSize="30dp"/>
 
             <Switch
-                android:id="@+id/isSwitch"
+                android:id="@+id/mIsSwitch"
                 android:layout_width="30dp"
                 android:layout_height="10dp"
                 android:layout_alignParentRight="true"
@@ -64,7 +64,8 @@
                 android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/checkAmPm"
                 android:theme="@style/SwitchTheme"
-                android:gravity="center" />
+                android:gravity="center"
+                />
 
             <TextView
                 android:layout_width="25dp"

@@ -1,7 +1,9 @@
 package com.example.gymrat;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -27,6 +29,9 @@ public class ModifyTime extends Activity {
     int[] checkColorArr;
 
     int sunCount, monCount, tueCount, wenCount, thuCount, friCount, satCount;
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 //      int sunCount = 0, monCount = 0, tueCount = 0, wenCount = 0, thuCount = 0, friCount = 0, satCount = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +72,8 @@ public class ModifyTime extends Activity {
 
 
         setColor();
-
+        System.out.println("isDateArr[0]" +  isDateArr[0]);
+        System.out.println("isDateArr[1]" +  isDateArr[1]);
         sunCount = setBackgroundTextView(sun, isDateArr[0], redColor, sunCount);
         monCount = setBackgroundTextView(mon, isDateArr[1], blacklColor, monCount);
         tueCount = setBackgroundTextView(tue, isDateArr[2], blacklColor, tueCount);
@@ -291,7 +297,18 @@ public class ModifyTime extends Activity {
         boolean isSwitch = false;
 
         alarmRecyleView.modifyItem(modifyPosition, hour, minute, colorArr, isDateArr, isSwitch);
-        //
+
+        setEditor(modifyPosition);
+        String checkColorString = getColorIndex(isDateArr);
+        editor.putString("position", String.valueOf(modifyPosition));
+        editor.putString("hour", hour);
+        editor.putString("minute", minute);
+        editor.putString("color", checkColorString);
+        editor.putBoolean("isChecked", isSwitch);
+        //AlarmRecyleView.fileCount += 1;
+        editor.apply();
+//        startActivityForResult(intent, 1);
+
         finish();
     }
 
@@ -308,4 +325,23 @@ public class ModifyTime extends Activity {
         return;
     }
 
+    public String getColorIndex(boolean[] arr){
+        String temp = "";
+        int count = 0;
+        for(count = 0; count < arr.length; count ++){
+            if (arr[count] == true){
+                temp = temp + count + " " + 1 + " ";
+            }
+            else{
+                temp = temp + count + " " + 0 + " ";
+            }
+
+        }
+        return temp;
+    }
+
+    public void setEditor(int i){
+        this.sharedPreferences = getSharedPreferences("Test" + i, Context.MODE_PRIVATE);
+        this.editor = sharedPreferences.edit();
+    }
 }

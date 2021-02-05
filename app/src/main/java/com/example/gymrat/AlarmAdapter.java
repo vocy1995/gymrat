@@ -46,7 +46,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
             thursday = (TextView)view.findViewById(R.id.cThursday);
             friday = (TextView)view.findViewById(R.id.cFriday);
             saturday = (TextView)view.findViewById(R.id.cSturday);
-            aSwitch = (Switch)view.findViewById(R.id.isSwitch);
+            aSwitch = (Switch)view.findViewById(R.id.mIsSwitch);
         }
     }
 
@@ -91,7 +91,8 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
         holder.thursday.setTextColor(mDataset.get(position).color[4]);
         holder.friday.setTextColor(mDataset.get(position).color[5]);
         holder.saturday.setTextColor(mDataset.get(position).color[6]);
-//        holder.aSwitch.setChecked(mDataset.get(position).isSwitch);
+        System.out.println("mDataset.get(position).isSwitch " + mDataset.get(position).isSwitch);
+        holder.aSwitch.setChecked(mDataset.get(position).isSwitch);
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             Context context;
