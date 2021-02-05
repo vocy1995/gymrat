@@ -36,11 +36,7 @@ public class GoalFragment extends Fragment {
     private GoalViewModel GoalViewModel;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-    private String calNow;
-    private String yearValue;
-    private String monthValue;
-    private String dayValue;
-    private final int ONE_DAY = 24 * 60 * 60 * 1000;
+    private long substract;
 
 public View onCreateView(@NonNull LayoutInflater inflater,
         ViewGroup container, Bundle savedInstanceState) {
@@ -94,12 +90,11 @@ public View onCreateView(@NonNull LayoutInflater inflater,
             public void onClick(View v) {
                 String value = idEdit.getText().toString();
                 String DateValue = editCale.getText().toString();
+                String Dday = Long.toString(substract);
 
                 databaseReference.child("Date").setValue(DateValue);
                 databaseReference.child("Comment").setValue(value);
-                databaseReference.child("Year").setValue(yearValue);
-                databaseReference.child("Month").setValue(monthValue);
-                databaseReference.child("Day").setValue(dayValue);
+                databaseReference.child("D-day").setValue(Dday);
             }
         });
 
@@ -115,17 +110,15 @@ public View onCreateView(@NonNull LayoutInflater inflater,
                 DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
                         (view, year, monthOfYear, dayOfMonth) -> {
                             String selectedDate = year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth + "일";
+                            Calendar today = Calendar.getInstance();
+                            Calendar d_day = Calendar.getInstance();
 
-                            Integer a = year;
-                            yearValue = a.toString();
-                            Integer c = (monthOfYear + 1);
-                            monthValue = c.toString();
-                            Integer e = dayOfMonth;
-                            dayValue = e.toString();
+                            d_day.set(year,(monthOfYear + 1), dayOfMonth );
 
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                            String today =  sdf.format(new Date());
-                            Log.d("A", today);
+                            long l_dday = d_day.getTimeInMillis()/(24*60*60*1000);
+                            long l_today = today.getTimeInMillis()/(24*60*60*1000);
+                            substract = l_dday - l_today - 28;
+
 
                             switch (v.getId()) {
                                 case R.id.editCal:
@@ -136,8 +129,7 @@ public View onCreateView(@NonNull LayoutInflater inflater,
                 datePickerDialog.show();
             }
         });
+            return root;
+        }
 
-
-    return root;
-}
     }
