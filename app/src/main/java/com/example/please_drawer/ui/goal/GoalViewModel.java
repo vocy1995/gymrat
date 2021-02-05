@@ -10,7 +10,7 @@ public class GoalViewModel extends ViewModel {
 
     public GoalViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("목표 설정");
+        mText.setValue("나의 목표");
     }
 
     public LiveData<String> getText() {
