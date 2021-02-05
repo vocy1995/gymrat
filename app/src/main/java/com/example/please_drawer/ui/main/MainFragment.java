@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -52,17 +53,58 @@ public class MainFragment extends Fragment {
         TextView goalToday = (TextView)root.findViewById(R.id.goalDate);
         ProgressBar proBar = (ProgressBar)root.findViewById(R.id.progress);
 
-        databaseReference.child("D-day").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Date").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
-                goalToday.setText(value);
-                proBar.setProgress(Integer.parseInt(value));
+
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                String dateInString = value;
+
+                try {
+                    Date date = formatter.parse(dateInString);
+
+                    Calendar today = Calendar.getInstance();
+                    Calendar d_day = Calendar.getInstance();
+
+                    d_day.setTime(date);
+
+                    long l_dday = d_day.getTimeInMillis()/(24*60*60*1000);
+                    long l_today = today.getTimeInMillis()/(24*60*60*1000);
+                    long substract = l_dday - l_today;
+
+                    databaseReference.child("S-day").setValue(Long.toString(substract));
+
+                    goalToday.setText(Long.toString(substract));
+
+                    databaseReference.child("S-day").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String valu = dataSnapshot.getValue(String.class);
+                            long a = Long.parseLong(valu);
+                            long b = substract;
+                            Integer c = (int)((a-b)*100/a);
+
+                            proBar.setProgress(c);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+
+
 
         return root;
     }
