@@ -35,20 +35,24 @@ public class AlarmRecyleView extends AppCompatActivity {
         });
     }
 
-    public static void insertItem(int position, String hour, String minute){
-        myDataset.add(position, new MyData(hour, minute));
+    public static void insertItem(int position, String hour, String minute, int[] color, boolean[] dateArr){
+        myDataset.add(position, new MyData(hour, minute, color, dateArr));
+        mAdapter.notifyDataSetChanged();
+    }
+
+    public static void modifyItem(int position, String hour, String minute, int[] color, boolean[] dateArr){
+        myDataset.set(position, new MyData(hour, minute, color, dateArr));
         mAdapter.notifyDataSetChanged();
     }
 
     public void removeItem(int position){
-
         myDataset.remove(position);
         mAdapter.notifyDataSetChanged();
     }
-    public void createList(){
-        myDataset.add(new MyData("30", "30"));
-        myDataset.add(new MyData("5", "5"));
-    }
+//    public void createList(){
+//        myDataset.add(new MyData("30", "30"));
+//        myDataset.add(new MyData("5", "5"));
+//    }
 
     public void buildRecycView(){
         mRecyclerView = (RecyclerView) findViewById(R.id.alarmrecyclerview);

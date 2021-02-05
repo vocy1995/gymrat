@@ -52,88 +52,84 @@
                 android:textSize="30dp"/>
 
             <Switch
-                android:layout_width="250dp"
-                android:layout_height="100dp"
-                android:gravity="center|right"
+                android:id="@+id/isSwitch"
+                android:layout_width="30dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/checkAmPm"
-                />
+                android:gravity="center" />
 
             <TextView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:text="일"
-                android:id="@+id/sunday"
+                android:id="@+id/cSunday"
                 android:layout_alignBottom="@+id/hourTime"
                 android:textColor="#ff0000"
-                android:gravity="center"
-                android:background="@drawable/date_change"/>
+                android:gravity="center"/>
 
             <TextView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:text="월"
-                android:id="@+id/monday"
+                android:id="@+id/cMonday"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_toRightOf="@+id/sunday"
+                android:layout_toRightOf="@+id/cSunday"
                 android:layout_alignBottom="@+id/hourTime"
-                android:background="@drawable/date_change"
                 />
 
             <TextView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:text="화"
-                android:id="@+id/tuesday"
+                android:id="@+id/cTuesday"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_toRightOf="@+id/monday"
-                android:layout_alignBottom="@+id/hourTime"
-                android:background="@drawable/date_change"/>
+                android:layout_toRightOf="@+id/cMonday"
+                android:layout_alignBottom="@+id/hourTime" />
 
             <TextView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:text="수"
-                android:id="@+id/wednesday"
+                android:id="@+id/cWednesday"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_toRightOf="@+id/tuesday"
-                android:layout_alignBottom="@+id/hourTime"
-                android:background="@drawable/date_change"/>
+                android:layout_toRightOf="@+id/cTuesday"
+                android:layout_alignBottom="@+id/hourTime"/>
 
             <TextView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:text="목"
-                android:id="@+id/thursday"
+                android:id="@+id/cThursday"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_toRightOf="@+id/wednesday"
-                android:layout_alignBottom="@+id/hourTime"
-                android:background="@drawable/date_change"/>
+                android:layout_toRightOf="@+id/cWednesday"
+                android:layout_alignBottom="@+id/hourTime"/>
 
             <TextView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:text="금"
-                android:id="@+id/friday"
+                android:id="@+id/cFriday"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_toRightOf="@+id/thursday"
-                android:layout_alignBottom="@+id/hourTime"
-                android:background="@drawable/date_change"/>
+                android:layout_toRightOf="@+id/cThursday"
+                android:layout_alignBottom="@+id/hourTime"/>
 
             <TextView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:text="토"
-                android:id="@+id/sturday"
+                android:id="@+id/cSturday"
                 android:textColor="#0067a3"
                 android:gravity="center"
-                android:layout_toRightOf="@+id/friday"
-                android:layout_alignBottom="@+id/hourTime"
-                android:background="@drawable/date_change"/>
+                android:layout_toRightOf="@+id/cFriday"
+                android:layout_alignBottom="@+id/hourTime"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

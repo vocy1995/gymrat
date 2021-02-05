@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SetTime" android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".ModifyTime" android:theme="@android:style/Theme.Dialog"/>
 
 
     </application>
