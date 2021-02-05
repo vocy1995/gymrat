@@ -30,6 +30,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
         // each data item is just a string in this case
         public TextView mHourView;
         public TextView mMinuteView;
+        public TextView mCheckAmPm;
         public TextView sunday, monday, tuesday, wednesday, thursday, friday, saturday;
         public Switch aSwitch;
 
@@ -37,6 +38,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
             super(view);
             mHourView = (TextView)view.findViewById(R.id.hourTime);
             mMinuteView = (TextView)view.findViewById(R.id.minTime);
+            mCheckAmPm = (TextView)view.findViewById(R.id.checkAmPm);
             sunday = (TextView)view.findViewById(R.id.cSunday);
             monday = (TextView)view.findViewById(R.id.cMonday);
             tuesday = (TextView)view.findViewById(R.id.cTuesday);
@@ -71,7 +73,16 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mHourView.setText(mDataset.get(position).cardHour);
+        int hourData = Integer.parseInt(mDataset.get(position).cardHour);
+        if ((hourData / 12) == 1){
+            holder.mHourView.setText(Integer.toString(hourData % 12));
+            holder.mCheckAmPm.setText("PM");
+        }
+        else{
+            holder.mHourView.setText(mDataset.get(position).cardHour);
+            holder.mCheckAmPm.setText("AM");
+        }
+
         holder.mMinuteView.setText(mDataset.get(position).cardMinute);
         holder.sunday.setTextColor(mDataset.get(position).color[0]);
         holder.monday.setTextColor(mDataset.get(position).color[1]);

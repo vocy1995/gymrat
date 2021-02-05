@@ -1,18 +1,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp">
+    android:layout_height="180dp">
     <androidx.cardview.widget.CardView
         android:id="@+id/alarmcardview"
-
         android:layout_width="match_parent"
-        android:layout_height="140dp">
+        android:layout_height="160dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="140dp"
             android:orientation="horizontal"
-            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/cardview_circle">
             <TextView
                 android:layout_width="50dp"
