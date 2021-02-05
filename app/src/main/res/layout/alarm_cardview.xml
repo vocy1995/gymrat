@@ -4,14 +4,16 @@
     android:layout_height="120dp">
     <androidx.cardview.widget.CardView
         android:id="@+id/alarmcardview"
-        card:cardCornerRadius="3dp"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="140dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:orientation="horizontal">
+            android:layout_height="110dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:background="@drawable/cardview_circle">
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="100dp"
@@ -59,6 +61,7 @@
                 android:layout_marginLeft="130dp"
                 android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/checkAmPm"
+                android:theme="@style/SwitchTheme"
                 android:gravity="center" />
 
             <TextView

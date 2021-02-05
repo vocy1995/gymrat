@@ -110,18 +110,18 @@
         <Button
             android:text="취소"
             android:textSize="15sp"
-            android:textColor="#ff7a00"
+            android:textColor="@color/black"
             android:layout_width="150dp"
             android:layout_height="53dp"
-            android:background="#00000000"
+            android:background="@drawable/selector_button"
             android:onClick="mOnClose"/>
 
 
         <Button
             android:text="확인"
             android:textSize="15sp"
-            android:textColor="#ff7a00"
-            android:background="#00000000"
+            android:textColor="@color/black"
+            android:background="@drawable/selector_button"
             android:layout_width="150dp"
             android:layout_height="53dp"
             android:onClick="mOnConfirm"/>

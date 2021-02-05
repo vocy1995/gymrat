@@ -18,10 +18,11 @@ public class SetTime extends Activity {
     AlarmRecyleView alarmRecyleView;
     TextView sun, mon, tue, wen, thu, fri, sat;
     boolean isSun, isMon, isTue, isWen, isThu, isFri, isSat;
-    boolean[] isDateArr = new boolean[7];
+    boolean[] isDateArr = {false, false, false, false, false, false, false};
 
     String data;
     int skyblueColor, redColor, blacklColor, blueColor, pinkColor;
+    int sunCount, monCount, tueCount, wenCount, thuCount, friCount, satCount;
     int[] colorArr = new int[7];
 
     @Override
@@ -54,7 +55,7 @@ public class SetTime extends Activity {
                 if (count == 0){
                     count += 1;
                     setTextview(sun, isSun);
-                    colorArr[0] = skyblueColor;
+                    colorArr[0] = pinkColor;
                     isDateArr[0] = true;
                 }
                 else{
@@ -73,7 +74,7 @@ public class SetTime extends Activity {
                 if (count == 0){
                     count += 1;
                     setTextview(mon, isMon);
-                    colorArr[1] = skyblueColor;
+                    colorArr[1] = pinkColor;
                     isDateArr[1] = true;
                 }
                 else{
@@ -92,7 +93,7 @@ public class SetTime extends Activity {
                 if (count == 0){
                     count += 1;
                     setTextview(tue, isTue);
-                    colorArr[2] = skyblueColor;
+                    colorArr[2] = pinkColor;
                     isDateArr[2] = true;
                 }
                 else{
@@ -111,7 +112,7 @@ public class SetTime extends Activity {
                 if (count == 0){
                     count += 1;
                     setTextview(wen, isWen);
-                    colorArr[3] = skyblueColor;
+                    colorArr[3] = pinkColor;
                     isDateArr[3] = true;
                 }
                 else{
@@ -130,7 +131,7 @@ public class SetTime extends Activity {
                 if (count == 0){
                     count += 1;
                     setTextview(thu, isThu);
-                    colorArr[4] = skyblueColor;
+                    colorArr[4] = pinkColor;
                     isDateArr[4] = true;
                 }
                 else{
@@ -149,7 +150,7 @@ public class SetTime extends Activity {
                 if (count == 0){
                     count += 1;
                     setTextview(fri, isFri);
-                    colorArr[5] = skyblueColor;
+                    colorArr[5] = pinkColor;
                     isDateArr[5] = true;
                 }
                 else{
@@ -168,7 +169,7 @@ public class SetTime extends Activity {
                 if (count == 0){
                     count += 1;
                     setTextview(sat, isSat);
-                    colorArr[6] = skyblueColor;
+                    colorArr[6] = pinkColor;
                     isDateArr[6] = true;
                 }
                 else{
@@ -185,6 +186,7 @@ public class SetTime extends Activity {
         data = intent.getStringExtra("data");
         System.out.println("data" + data);
 
+        System.out.println("isDateAtrr le " + isDateArr.length);
 
     }
 
@@ -196,7 +198,7 @@ public class SetTime extends Activity {
     public void setTextview(TextView textView, boolean isDate){
         isDate = true;
         textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.round_date));
-        textView.setTextColor(skyblueColor);
+        textView.setTextColor(pinkColor);
     }
 
     public void unSetTextview(TextView textView, boolean isDate, int colorCode){
@@ -224,14 +226,22 @@ public class SetTime extends Activity {
 
     public void mOnConfirm(View v){
 
-        String hour = getTime()[0];
-        String minute = getTime()[1];
-        System.out.println(hour);
-        System.out.println(minute);
         String[] time = getTime();
+        String hour = getTime()[0];
+        String minute;
 
-        System.out.println("Integer.parseInt(data) " + Integer.parseInt(data));
-        alarmRecyleView.insertItem(Integer.parseInt(data),time[0], time[1], colorArr, isDateArr);
+        if (Integer.parseInt(time[1]) < 10){
+            minute = "0" + getTime()[1];
+        }
+        else{
+            minute = getTime()[1];
+        }
+        System.out.println("set hour" + hour);
+        System.out.println("set mi" +minute);
+
+        boolean isSwitch = false;
+
+        alarmRecyleView.insertItem(Integer.parseInt(data),hour, minute, colorArr, isDateArr, isSwitch);
 //        startActivityForResult(intent, 1);
 
         finish();

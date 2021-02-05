@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,7 +17,7 @@ public class AlarmRecyleView extends AppCompatActivity {
     private static RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private static ArrayList<MyData> myDataset;
-    Button addAlarm;
+    ImageButton addAlarm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +36,13 @@ public class AlarmRecyleView extends AppCompatActivity {
         });
     }
 
-    public static void insertItem(int position, String hour, String minute, int[] color, boolean[] dateArr){
-        myDataset.add(position, new MyData(hour, minute, color, dateArr));
+    public static void insertItem(int position, String hour, String minute, int[] color, boolean[] dateArr, boolean isSwitch){
+        myDataset.add(position, new MyData(hour, minute, color, dateArr, isSwitch));
         mAdapter.notifyDataSetChanged();
     }
 
-    public static void modifyItem(int position, String hour, String minute, int[] color, boolean[] dateArr){
-        myDataset.set(position, new MyData(hour, minute, color, dateArr));
+    public static void modifyItem(int position, String hour, String minute, int[] color, boolean[] dateArr, boolean isSwitch){
+        myDataset.set(position, new MyData(hour, minute, color, dateArr, isSwitch));
         mAdapter.notifyDataSetChanged();
     }
 
