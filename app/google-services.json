@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289810748174",
+    "project_id": "gymrat-f925a",
+    "storage_bucket": "gymrat-f925a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289810748174:android:76132f8e4204acdfe67d5f",
+        "android_client_info": {
+          "package_name": "com.example.please_drawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289810748174-1j0i6fe0m6074g9dbn16261hphpulhnf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApsTY9pq9bcgfK2kV_U4J4JNzMShMJxEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289810748174-1j0i6fe0m6074g9dbn16261hphpulhnf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.gymrat;
+package com.example.please_drawer;
 
 import org.junit.Test;
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="GymRat" />
+        <item
+            android:id="@+id/nav_timer"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="운동시간 알림" />
+        <item
+            android:id="@+id/nav_food"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="식단 추천" />
+        <item
+            android:id="@+id/nav_exercise"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="운동 정보" />
+        <item
+            android:id="@+id/nav_routine"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="루틴 설정" />
+        <item
+            android:id="@+id/nav_goal"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="목표 설정" />
+    </group>
+</menu>

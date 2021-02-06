@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/anroid"
+    package="com.example.please_drawer"
+
+    <application
+        android:allowBackup = "true"
+        android:icon ="@mipmap/ic_launcher"
+        android:label="please_drawer"
+        android.roundIcon="@mipmap/ic_launcher_round"
+        android.supportsRt1="true"
+        android.theme="@style/AppTheme">
+
+        <activity android:name ="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.exercise"/>
+            </intent-filter>
+
+        </activity>
+    <activity android:name=".SecondActivity"/>
+    </application>
+</LinearLayout>
