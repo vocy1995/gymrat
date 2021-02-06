@@ -48,6 +48,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,5 +57,116 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.284" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="379dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/cardview_circle"
+        app:layout_constraintVertical_bias="0.743" >
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="214dp"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="17dp"
+            android:text="사이드 레터럴 레이즈" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="298dp"
+            android:layout_marginBottom="32dp"
+            android:text="어깨"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="214dp"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="60dp"
+            android:text="밀리터리 숄더 프레스" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="379dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        android:background="@drawable/cardview_circle">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="214dp"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="17dp"
+            android:text="데드리프트" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="214dp"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="60dp"
+            android:text="턱걸이" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="298dp"
+            android:layout_marginBottom="32dp"
+            android:text="등"
+            android:textSize="20dp" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

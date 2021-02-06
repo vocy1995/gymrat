@@ -12,10 +12,7 @@
             android:id="@+id/nav_timer"
             android:icon="@drawable/ic_menu_camera"
             android:title="운동시간 알림" />
-        <item
-            android:id="@+id/nav_food"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="식단 추천" />
+
         <item
             android:id="@+id/nav_exercise"
             android:icon="@drawable/ic_menu_camera"

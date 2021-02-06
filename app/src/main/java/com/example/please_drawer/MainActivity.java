@@ -2,9 +2,11 @@ package com.example.please_drawer;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -12,6 +14,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -44,6 +47,26 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        switch(item.getItemId()) {
+//            case R.id.item1:
+//                Toast.makeText(this, "item1 clicked..", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.item2:
+//                Toast.makeText(this, "item2 clicked..", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.item3:
+//                Toast.makeText(this, "item3 clicked..", Toast.LENGTH_SHORT).show();
+//                break;
+//        }
+//
+//        //drawerLayout.closeDrawer(GravityCompat.START);
+//        return false;
+//    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

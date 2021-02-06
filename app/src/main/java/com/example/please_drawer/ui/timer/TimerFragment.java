@@ -1,5 +1,6 @@
 package com.example.please_drawer.ui.timer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.please_drawer.AlarmRecyleView;
 import com.example.please_drawer.R;
 
 public class TimerFragment extends Fragment {
@@ -23,13 +25,18 @@ public class TimerFragment extends Fragment {
         timerViewModel =
                 new ViewModelProvider(this).get(TimerViewModel.class);
         View root = inflater.inflate(R.layout.fragment_timer, container, false);
-        final TextView textView = root.findViewById(R.id.text_timer);
-        timerViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+//        final TextView textView = root.findViewById(R.id.text_timer);
+//        timerViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
+        goToAttract();
         return root;
+    }
+    public void goToAttract(){
+        Intent i = new Intent(getActivity(), AlarmRecyleView.class);
+        startActivity(i);
     }
 }
