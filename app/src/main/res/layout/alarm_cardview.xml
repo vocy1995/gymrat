@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/alarmcardview"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/cardview_circle">
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:id="@+id/hourTime"
+                android:text="10"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="30dp"/>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="100dp"
+                android:text=":"
+                android:id="@+id/split_time"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/hourTime"
+                android:gravity="center"
+                android:textSize="30dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:id="@+id/minTime"
+                android:layout_toRightOf="@+id/split_time"
+                android:text="10"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="30dp"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@+id/minTime"
+                android:text="PM"
+                android:id="@+id/checkAmPm"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="30dp"/>
+
+            <Switch
+                android:id="@+id/mIsSwitch"
+                android:layout_width="30dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="40dp"
+                android:layout_toRightOf="@+id/checkAmPm"
+                android:theme="@style/SwitchTheme"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:text="일"
+                android:id="@+id/cSunday"
+                android:layout_alignBottom="@+id/hourTime"
+                android:textColor="#ff0000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:text="월"
+                android:id="@+id/cMonday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/cSunday"
+                android:layout_alignBottom="@+id/hourTime"
+                />
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:text="화"
+                android:id="@+id/cTuesday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/cMonday"
+                android:layout_alignBottom="@+id/hourTime" />
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:text="수"
+                android:id="@+id/cWednesday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/cTuesday"
+                android:layout_alignBottom="@+id/hourTime"/>
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:text="목"
+                android:id="@+id/cThursday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/cWednesday"
+                android:layout_alignBottom="@+id/hourTime"/>
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:text="금"
+                android:id="@+id/cFriday"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/cThursday"
+                android:layout_alignBottom="@+id/hourTime"/>
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:text="토"
+                android:id="@+id/cSturday"
+                android:textColor="#0067a3"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/cFriday"
+                android:layout_alignBottom="@+id/hourTime"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_main">
+
+    <fragment
+        android:id="@+id/nav_main"
+        android:name="com.example.please_drawer.ui.main.MainFragment"
+        android:label="GymRat"
+        tools:layout="@layout/fragment_main" />
+
+    <fragment
+        android:id="@+id/nav_timer"
+        android:name="com.example.please_drawer.ui.timer.TimerFragment"
+        android:label="운동시간 알림"
+        tools:layout="@layout/fragment_timer" />
+
+    <fragment
+        android:id="@+id/nav_food"
+        android:name="com.example.please_drawer.ui.food.FoodFragment"
+        android:label="식단 추천"
+        tools:layout="@layout/fragment_food" />
+
+    <fragment
+        android:id="@+id/nav_exercise"
+        android:name="com.example.please_drawer.ui.exercise.ExerciseFragment"
+        android:label="운동 정보"
+        tools:layout="@layout/fragment_exercise" />
+
+    <fragment
+        android:id="@+id/nav_routine"
+        android:name="com.example.please_drawer.ui.routine.RoutineFragment"
+        android:label="루틴 설정"
+        tools:layout="@layout/fragment_routine" />
+
+    <fragment
+        android:id="@+id/nav_goal"
+        android:name="com.example.please_drawer.ui.goal.GoalFragment"
+        android:label="목표 설정"
+        tools:layout="@layout/fragment_goal" />
+</navigation>
