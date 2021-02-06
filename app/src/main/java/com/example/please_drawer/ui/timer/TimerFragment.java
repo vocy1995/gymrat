@@ -32,6 +32,7 @@ public class TimerFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
+        
         goToAttract();
         return root;
     }
